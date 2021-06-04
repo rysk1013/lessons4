@@ -27,4 +27,11 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
+
+	// アップデート
+	cmd = "UPDATE person SET  age = ? WHERE name = ?"
+	_, err = Dbconnection.Exec(cmd, 25, "Mike")
+	if err != nil {
+		log.Fatalln(err)
+	}
 }
